@@ -219,6 +219,14 @@ function Editor(props) {
             setValues((prev) => ({ ...prev, endDate: event.target.value }))
           }
         />
+        <InputControl
+          label="Result"
+          placeholder="CGPA/Percent"
+          value={values.result}
+          onChange={(event) =>
+            setValues((prev) => ({ ...prev, result: event.target.value }))
+          }
+        />
       </div>
     </div>
   );
@@ -425,6 +433,7 @@ function Editor(props) {
           college: values.college,
           startDate: values.startDate,
           endDate: values.endDate,
+          result: values.result,
         };
         const tempDetails = [...information[sections.education]?.details];
         tempDetails[activeDetailIndex] = tempDetail;
@@ -526,22 +535,13 @@ function Editor(props) {
         ? activeInfo.details[0]?.overview || ""
         : "",
       link: activeInfo?.details ? activeInfo.details[0]?.link || "" : "",
-      certificationLink: activeInfo?.details
-        ? activeInfo.details[0]?.certificationLink || ""
-        : "",
-      companyName: activeInfo?.details
-        ? activeInfo.details[0]?.companyName || ""
-        : "",
-      college: activeInfo?.details
-        ? activeInfo.details[0]?.college || ""
-        : "",
-      location: activeInfo?.details
-        ? activeInfo.details[0]?.location || ""
-        : "",
-      startDate: activeInfo?.details
-        ? activeInfo.details[0]?.startDate || ""
-        : "",
+      certificationLink: activeInfo?.details? activeInfo.details[0]?.certificationLink || "" : "",
+      companyName: activeInfo?.details? activeInfo.details[0]?.companyName || "" : "",
+      college: activeInfo?.details? activeInfo.details[0]?.college || "" : "",
+      location: activeInfo?.details? activeInfo.details[0]?.location || "" : "",
+      startDate: activeInfo?.details? activeInfo.details[0]?.startDate || "" : "",
       endDate: activeInfo?.details ? activeInfo.details[0]?.endDate || "" : "",
+      result: activeInfo?.details ? activeInfo.details[0]?.result || "" : "",
       points: activeInfo?.details
         ? activeInfo.details[0]?.points
           ? [...activeInfo.details[0]?.points]
@@ -585,6 +585,7 @@ function Editor(props) {
       linkedin: activeInfo.details[activeDetailIndex]?.linkedin || "",
       github: activeInfo.details[activeDetailIndex]?.github || "",
       college: activeInfo.details[activeDetailIndex]?.college || "",
+      result: activeInfo.details[activeDetailIndex]?.result || "",
     });
   }, [activeDetailIndex]);
 

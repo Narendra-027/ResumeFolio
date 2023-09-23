@@ -57,35 +57,40 @@ const Resume = forwardRef((props, ref) => {
               ) : (
                 <span />
               )}
-              {item.companyName ? (
-                <p className={styles.subTitle}>{item.companyName}</p>
-              ) : (
-                <span />
-              )}
-              {item.certificationLink ? (
-                <a className={styles.link} href={item.certificationLink} target="_blank">
-                  Link
-                  <Paperclip />
-                  {/* {item.certificationLink} */}
-                </a>
-              ) : (
-                <span />
-              )}
-              {item.startDate && item.endDate ? (
-                <div className={styles.date}>
-                  <Calendar /> {getFormattedDate(item.startDate)}-
-                  {getFormattedDate(item.endDate)}
-                </div>
-              ) : (
-                <div />
-              )}
-              {item.location ? (
-                <p className={styles.date}>
-                  <MapPin /> Remote
-                </p>
-              ) : (
-                <span />
-              )}
+              <div className={styles.row}>
+                  {item.companyName ? (
+                    <p className={styles.subTitle}>{item.companyName}</p>
+                  ) : (
+                    <span />
+                  )}
+                  {item.certificationLink ? (
+                    <a className={styles.link} href={item.certificationLink} target="_blank">
+                      Link
+                      <Paperclip />
+                      {/* {item.certificationLink} */}
+                    </a>
+                  ) : (
+                    <span />
+                  )}
+              </div>
+
+              <div className={styles.row}>
+                  {item.startDate && item.endDate ? (
+                    <div className={styles.date}>
+                      <Calendar /> {getFormattedDate(item.startDate)}-
+                      {getFormattedDate(item.endDate)}
+                    </div>
+                  ) : (
+                    <div />
+                  )}
+                  {item.location ? (
+                    <p className={styles.date}>
+                      <MapPin /> {item.location}
+                    </p>
+                  ) : (
+                    <span />
+                  )}
+              </div>
               {item.points?.length > 0 ? (
                 <ul className={styles.points}>
                   {item.points?.map((elem, index) => (
@@ -184,14 +189,21 @@ const Resume = forwardRef((props, ref) => {
               ) : (
                 <span />
               )}
-              {item.startDate && item.endDate ? (
-                <div className={styles.date}>
-                  <Calendar /> {getFormattedDate(item.startDate)} -
-                  {getFormattedDate(item.endDate)}
-                </div>
-              ) : (
-                ""
-              )}
+              <div className={styles.row}>
+                {item.startDate && item.endDate ? (
+                  <div className={styles.date}>
+                    <Calendar /> {getFormattedDate(item.startDate)} -
+                    {getFormattedDate(item.endDate)}
+                  </div>
+                ) : (
+                  ""
+                )}
+                {item.result ? (
+                  <p>{item.result}</p>
+                ) : (
+                  ""
+                )}
+              </div>
             </div>
           ))}
         </div>
