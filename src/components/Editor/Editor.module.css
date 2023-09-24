@@ -13,9 +13,11 @@
 
 .header {
   display: flex;
-  gap: 10px;
   overflow-x: auto;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-overflow-scrolling: touch;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .header::-webkit-scrollbar {
@@ -25,6 +27,8 @@
 .header::-webkit-scrollbar-thumb {
   border-radius: 20px;
   background-color: #c7c7c7;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .header .section {
@@ -128,4 +132,12 @@
 
 .body button:active {
   transform: translateY(2px);
+}
+
+
+.wrap{
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 5px;
+  column-gap: 3px;
 }

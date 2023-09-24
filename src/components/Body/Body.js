@@ -6,7 +6,7 @@ import Editor from "../Editor/Editor";
 import Resume from "../Resume/Resume";
 
 import styles from "./Body.module.css";
-import { downloadResumeJSON } from './Sections/downLoadJSON'; // Update the path as needed
+import { downloadResumeJSON } from './Sections/downLoadJSON';
 
 function Body() {
   const colors = ["#239ce2", "#48bb78", "#0bc5ea", "#a0aec0", "#ed8936"];
@@ -15,9 +15,10 @@ function Body() {
     workExp: "Work Experience",
     project: "Projects",
     education: "Education",
+    skill: "Skills",
     achievement: "Achievements",
-    summary: "Summary",
-    other: "Other",
+    course: "Coursework",
+    por : "Position of Responsibility",
   };
   const resumeRef = useRef();
 
@@ -43,30 +44,34 @@ function Body() {
       sectionTitle: sections.education,
       details: [],
     },
+    [sections.skill]: {
+      id: sections.skill,
+      sectionTitle: sections.skill,
+      details: [],
+    },
     [sections.achievement]: {
       id: sections.achievement,
       sectionTitle: sections.achievement,
       points: [],
     },
-    [sections.summary]: {
-      id: sections.summary,
-      sectionTitle: sections.summary,
-      detail: "",
+    [sections.course]: {
+      id: sections.course,
+      sectionTitle: sections.course,
+      points: [],
     },
-    [sections.other]: {
-      id: sections.other,
-      sectionTitle: sections.other,
-      detail: "",
+    [sections.por]: {
+      id: sections.por,
+      sectionTitle: sections.por,
+      points: [],
     },
   });
-
   const handleFileUpload = (event) => {
-    const selectedFile = event.target.files[0]; // Get the selected file
+    const selectedFile = event.target.files[0];
     if (selectedFile) {
       const reader = new FileReader();
       reader.onload = (e) => {
         try {
-          const uploadedData = JSON.parse(e.target.result); // Parse the JSON data
+          const uploadedData = JSON.parse(e.target.result);
           console.log("Uploaded JSON data:", uploadedData);
           setResumeInformation(uploadedData);
         } catch (error) {
@@ -103,11 +108,13 @@ function Body() {
           <button onClick={() => downloadResumeJSON(resumeInformation)}>Resume JSON <ArrowDown /></button>
           <ReactToPrint
             trigger={() => {
+              console.log("resumeRef", resumeRef.current);
               return (
                 <button>Resume PDF <ArrowDown /></button>
               );
             }}
             content={() => resumeRef.current}
+            pageStyle={`@page { size: 8.27in 11.69in;`}
           />
         </div>
       </div>
