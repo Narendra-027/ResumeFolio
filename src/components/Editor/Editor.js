@@ -310,6 +310,7 @@ function Editor(props) {
         />
         <InputControl
           label="Result"
+          style={{width:'175px'}}
           placeholder="CGPA/Percent"
           value={values.result}
           onChange={(event) =>
@@ -334,49 +335,76 @@ function Editor(props) {
         <label>Enter Your Skills</label>
         <div className={styles.wrap}>
           <InputControl
+            style={{width:'186px'}}
             placeholder="Skill 1"
             value={values.points ? values.points[0] : ""}
             onChange={(event) => handlePointUpdate(event.target.value, 0)}
           />
           <InputControl
+            style={{width:'186px'}}
             placeholder="Skill 2"
             value={values.points ? values.points[1] : ""}
             onChange={(event) => handlePointUpdate(event.target.value, 1)}
           />
           <InputControl
+            style={{width:'186px'}}
             placeholder="Skill 3"
             value={values.points ? values.points[2] : ""}
             onChange={(event) => handlePointUpdate(event.target.value, 2)}
           />
           <InputControl
+            style={{width:'186px'}}
             placeholder="Skill 4"
             value={values.points ? values.points[3] : ""}
             onChange={(event) => handlePointUpdate(event.target.value, 3)}
           />
           <InputControl
+            style={{width:'186px'}}
             placeholder="Skill 5"
             value={values.points ? values.points[4] : ""}
             onChange={(event) => handlePointUpdate(event.target.value, 4)}
           />
           <InputControl
+            style={{width:'186px'}}
             placeholder="Skill 6"
             value={values.points ? values.points[5] : ""}
             onChange={(event) => handlePointUpdate(event.target.value, 5)}
           />
           <InputControl
+            style={{width:'186px'}}
             placeholder="Skill 7"
             value={values.points ? values.points[6] : ""}
             onChange={(event) => handlePointUpdate(event.target.value, 6)}
           />
           <InputControl
+            style={{width:'186px'}}
             placeholder="Skill 8"
             value={values.points ? values.points[7] : ""}
             onChange={(event) => handlePointUpdate(event.target.value, 7)}
           />
           <InputControl
+            style={{width:'186px'}}
             placeholder="Skill 9"
             value={values.points ? values.points[8] : ""}
             onChange={(event) => handlePointUpdate(event.target.value, 8)}
+          />
+          <InputControl
+            style={{width:'186px'}}
+            placeholder="Skill 10"
+            value={values.points ? values.points[9] : ""}
+            onChange={(event) => handlePointUpdate(event.target.value, 9)}
+          />
+          <InputControl
+            style={{width:'186px'}}
+            placeholder="Skill 11"
+            value={values.points ? values.points[10] : ""}
+            onChange={(event) => handlePointUpdate(event.target.value, 10)}
+          />
+          <InputControl
+            style={{width:'186px'}}
+            placeholder="Skill 12"
+            value={values.points ? values.points[11] : ""}
+            onChange={(event) => handlePointUpdate(event.target.value, 11)}
           />
         </div>
       </div>

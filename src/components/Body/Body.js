@@ -114,8 +114,9 @@ function Body() {
               );
             }}
             content={() => resumeRef.current}
-            pageStyle={`@page { size: 8.27in 11.69in;`}
+            pageStyle={`@page {size: 8.27in 11.69in;}`}
           />
+          {/* <button onClick={generatePDF}>Generate PDF</button> */}
         </div>
       </div>
       <div className={styles.main}>
