@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/ResumeFolio/static/css/main.8e9eadb4.css",
+    "main.js": "/ResumeFolio/static/js/main.3050de8e.js",
+    "static/media/resume.svg": "/ResumeFolio/static/media/resume.747b0dd9d4a36a4fe054ab84b590ebfb.svg",
+    "index.html": "/ResumeFolio/index.html",
+    "main.8e9eadb4.css.map": "/ResumeFolio/static/css/main.8e9eadb4.css.map",
+    "main.3050de8e.js.map": "/ResumeFolio/static/js/main.3050de8e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8e9eadb4.css",
+    "static/js/main.3050de8e.js"
+  ]
+}
