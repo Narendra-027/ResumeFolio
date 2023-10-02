@@ -1,5 +1,6 @@
 {
   "homepage": "https://Narendra-027.github.io/ResumeFolio",
+  "main": "src/index.js",
   "name": "resume-builder",
   "version": "0.1.0",
   "private": true,
